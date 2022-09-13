@@ -50,9 +50,9 @@ int main(void)
 		f1 = f2;
 		f1o = f2o;
 		f2 = tmp;
-		f2o = tmpo;
-		
-		if(i != 98)
+		f20 = tmpo;
+
+		if (i != 98)
 			printf(", ");
 		else
 			printf("\n");
