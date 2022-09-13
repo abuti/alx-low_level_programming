@@ -3,7 +3,7 @@
 /**
  * print_alphabet - function to print abc
  *
- * Return: 0
+ * Return: o
  */
 
 void print_alphabet(void)
