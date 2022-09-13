@@ -52,7 +52,7 @@ int main(void)
 		f2 = tmp;
 		f2o = tmpo;
 		
-		if (i != 98)
+		if(i != 98)
 			printf(", ");
 		else
 			printf("\n");
