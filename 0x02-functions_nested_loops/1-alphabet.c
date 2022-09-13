@@ -5,14 +5,13 @@
  *
  * Return: o
  */
-
 void print_alphabet(void)
 {
-	char c;
-	
-	for (c = 'a'; c <= 'z'; c++)
+	char b;
+
+	for (b = 'a'; b <= 'z'; b++)
 	{
-		_putchar(c);
+		_putchar(b);
 	}
 	_putchar('\n');
 }
