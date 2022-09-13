@@ -44,7 +44,7 @@ int main(void)
 			printf("%i", 0);
 			initial0s--;
 		}
-		pintf("%lu", f1);
+		printf("%lu", f1);
 		tmp = (f1 + f2) % mx;
 		tmpo = f1o + f2o + (f1 + f2) / mx;
 		f1 = f2;
