@@ -21,7 +21,7 @@ int main(void)
 	}
 	else if (lastdigit == 0)
 	{
-		printf("Last digit of %i is %i and is 0/n", n, lastdigit);
+		printf("Last digit of %i is %i and is 0\n", n, lastdigit);
 	}
 	else if (lastdigit < 6)
 	{
