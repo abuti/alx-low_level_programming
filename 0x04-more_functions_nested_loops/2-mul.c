@@ -2,13 +2,13 @@
 
 /**
  * mul - gives the product of a and b
- * @a: variable
- * @b: variable 
+ * @a: first number
+ * @b: second number
  *  
- * Return: a * b
+ * Return: returns the multiplication result
  */
 
-int mul(int a, int b)
+int mul (int a, int b)
 {
 	return (a * b);
 }
