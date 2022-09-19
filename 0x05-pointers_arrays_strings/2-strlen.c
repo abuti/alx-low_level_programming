@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- *strlen - calculates the size of a string
+ *_strlen - calculates the size of a string
  *@s: string the size to be calculated
  *
  *Return: size of the string/ integer
