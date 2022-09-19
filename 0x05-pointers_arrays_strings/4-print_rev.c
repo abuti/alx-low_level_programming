@@ -18,4 +18,5 @@
 		putchar(*(s + i));
 		i--;
 	}
+	putchar(10);
 }
