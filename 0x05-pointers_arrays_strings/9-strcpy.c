@@ -2,9 +2,9 @@
 
 /**
 * _strcpy - copies a string and pastes
-* @dest: destination 
+* @dest: destination
 * @src: source
-* 
+*
 * Return: destination
 */
 
