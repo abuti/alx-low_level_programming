@@ -4,7 +4,7 @@
  *src string only src does not need to be null-terminated if it contains
  *@dest: the string that the other string going to be added to
  *@src: the string that will be appended
- *n: maximum number of bytes
+ *@n: maximum number of bytes
  *
  *Return: concatinated string
  */
