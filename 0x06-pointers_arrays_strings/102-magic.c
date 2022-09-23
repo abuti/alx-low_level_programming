@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - function where the compiler starts
- *
- * Return: integer value
- */
-
 int main(void)
 {
 	int n;
