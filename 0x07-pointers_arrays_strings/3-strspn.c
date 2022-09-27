@@ -5,8 +5,7 @@
  * @s: string to be searched
  * @accept: the prefix to be measured
  *
- * Return: The number of bytes in the initial segment of s which
-   consist only of bytes from accept.
+ * Return: The number of bytes in s which consist only of bytes from accept.
  */
 
 unsigned int _strspn(char *s, char *accept)
