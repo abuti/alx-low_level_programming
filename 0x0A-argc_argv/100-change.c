@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int change, c25 = 0, c10 = 0, c5 = 0, c2 = 0, c1 = 0;
-	
+
 	if (argc - 1 != 1)
 	{
 		printf("Error\n");
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		if (change >= 10)
 		{
 			c10 = change / 10;
-			change = change % 10; 
+			change = change % 10;
 		}
 		if (change >= 5)
 		{
