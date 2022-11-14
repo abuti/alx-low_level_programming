@@ -14,11 +14,22 @@ char *str_concat(char *s1, char *s2)
 	char *ptr;
 	int i, n = 0, m = 0;
 
-	while (s1[n] != '\0')
-		n++;
-	while (s2[m] != '\0')
-		m++;
+	if (s1 == NULL)
+		n = 0;
+	else
+		while (s1[n] != '\0')
+			n++;
+	if (s2 == NULL)
+		m = 0;
+	else
+		while (s2[m] != '\0')
+			m++;
 	ptr = (char *) malloc(((n + m + 2) * sizeof(char)) + 1);
+	if (ptr == NULL)
+	{
+		printf("Can't allocate the needed bytes\n");
+		return (NULL);
+	}
 	if (n != 0)
 		for (i = 0; i <= n; i++)
 			ptr[i] = s1[i];
