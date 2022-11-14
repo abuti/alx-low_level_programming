@@ -26,6 +26,11 @@ char *_strdup(char *str)
 			n++;
 		}
 		ptr = (char *)malloc((n + 1) * sizeof(char));
+		if (ptr == NULL)
+		{
+			printf("Can't allocate the needed bytes\n");
+			exit(1);
+		}
 		n = 0;
 		while (str[n] != '\0')
 		{
