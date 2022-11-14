@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 	else
 		while (s2[m] != '\0')
 			m++;
-	ptr = (char *) malloc(((n + m + 2) * sizeof(char)) + 1);
+	ptr = (char *) malloc((n + m + 2) * sizeof(char));
 	if (ptr == NULL)
 	{
 		printf("Can't allocate the needed bytes\n");
@@ -36,6 +36,5 @@ char *str_concat(char *s1, char *s2)
 	if (m != 0)
 		for (i = 0; i <= m; i++)
 			ptr[n + i] = s2[i];
-	ptr[n + m + 2] = '\0';
 	return (ptr);
 }
