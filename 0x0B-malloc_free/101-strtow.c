@@ -11,43 +11,45 @@
 
 char **strtow(char *str)
 {
-	int i = 0, j = 0, r = 0, c;
-	char **ptr;
+	int wc = 0, i = 0, j = 0, k, wlen;
+	char **newStr, *temp;
 
-	if (str == NULL)
+	if (str == NULL || !*str)
 		return (NULL);
-	while (str[i] != '\0')
+	while (*(str + i))
 	{
-		if (str[i] == ' ')
-			r++;
-		i++;
+		if (*(str + i) != ' ')
+			if (*(str + i + 1) == ' ' || *(str + i + 1) == '\0')
+				wc++;
+		++i;
 	}
-	ptr = malloc(sizeof(char) * r);
-	if (ptr == NULL)
+	if (wc == 0)
 		return (NULL);
-	for (i = 0; i < r; i++)
+	newStr = malloc(++wc  * sizeof(char *));
+	if (newStr == NULL)
+		return (NULL);
+	while (*str)
 	{
-		c = 0;
-		for (j = 0; str[j] != ' '; j++)
+		while (*str == ' ' && *str)
+			++str;
+		wlen = 0;
+		while (*(str + wlen) != ' ' && *(str + wlen))
+			++wlen;
+		temp = malloc((wlen + 1) * sizeof(char));
+		if (temp == NULL)
 		{
-			c++;
-		}
-		ptr[i] = malloc(sizeof(char) * c + 1);
-	}
-	for (i = 0; i < r; i++)
-	{
-		if (ptr[i] == NULL)
-		{
+			for (; j - 1 >= 0; j--)
+				free(newStr[j]);
+			free(newStr);
 			return (NULL);
 		}
+		for (k = 0; k < wlen; ++k)
+			*(temp + k) = *str++;
+		*(temp + k) = '\0';
+		*(newStr + j) = temp;
+		if (j < wc - 1)
+			j++;
 	}
-	for (i = 0; i < r; i++)
-	{
-		for (j = 0; str[i + j] != ' '; j++)
-		{
-			ptr[i][j] = str[i + j];
-		}
-		ptr[i][j + 1] = '\0';
-	}
-	return (ptr);
+	*(newStr + j) = NULL;
+	return (newStr);
 }
