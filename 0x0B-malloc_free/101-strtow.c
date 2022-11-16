@@ -48,8 +48,7 @@ char **strtow(char *str)
 		*(temp + k) = '\0';
 		*(newStr + j) = temp;
 		if (j < wc - 1)
-			j++;
-	}
+			j++; }
 	*(newStr + j) = NULL;
 	return (newStr);
 }
