@@ -3,9 +3,10 @@
 #include "main.h"
 #include <string.h>
 /**
- * stirng_nconcat - concatenates two strings
+ * string_nconcat - concatenates two strings
  * @s1: the first string to be concatenated
  * @s2: the second  string to be concatenated
+ * @n: no. of strings to be concatenated from s2
  * Return: pointer shall point to a newly allocated
  * space in memory, which contains s1, followed by
  * the first n bytes of s2, and null terminated
@@ -23,16 +24,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		exit(1);
 	for (i = 0; i < sz1; i++)
 		ptr[i] = s1[i];
-	ptr[sz1] = ' ';
 	if (sz2 <= n)
 	{
 		for (j = 0; j < sz2; j++)
-			ptr[sz1 + 1 + j] = s2[j];
+			ptr[sz1 + j] = s2[j];
 	}
 	else
 	{
 		for (j = 0; j < n; j++)
-			ptr[sz1 + 1 + j] = s2[j];
+			ptr[sz1 + j] = s2[j];
 	}
 	ptr[sz1 + j + 2] = '\0';
 	return (ptr);
