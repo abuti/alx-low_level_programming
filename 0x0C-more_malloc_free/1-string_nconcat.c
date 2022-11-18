@@ -26,18 +26,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		sz1 = strlen(s1);
 		sz2 = strlen(s2);
-		ptr = malloc(sizeof(char) * (n + sz1));
-		if (ptr == NULL)
-			exit(1);
-		for (i = 0; i < sz1; i++)
-			ptr[i] = s1[i];
 		if (sz2 <= n)
 		{
+			ptr = malloc(sizeof(char) * (sz1 + sz2));
+			if (ptr == NULL)
+				exit(1);
+			for (i = 0; i < sz1; i++)
+				ptr[i] = s1[i];
 			for (j = 0; j < sz2; j++)
 				ptr[sz1 + j] = s2[j];
 		}
 		else
 		{
+			ptr = malloc(sizeof(char) * (sz1 + n));
+			if (ptr == NULL)
+				exit(1);
+			for (i = 0; i < sz1; i++)
+				ptr[i] = s1[i];
 			for (j = 0; j < n; j++)
 				ptr[sz1 + j] = s2[j];
 		}
