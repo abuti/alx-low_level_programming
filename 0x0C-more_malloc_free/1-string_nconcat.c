@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#include <string.h>
+
 /**
  * string_nconcat - concatenates two strings
  * @s1: the first string to be concatenated
@@ -15,14 +15,16 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	unsigned int sz1, sz2, i;
+	unsigned int sz1 = 0, sz2 = 0, i;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	sz1 = strlen(s1);
-	sz2 = strlen(s2);
+	while (s1[sz1] != '\0')
+		sz1++;
+	while (s2[sz2] != '\0')
+		sz2++;
 	if (sz2 <= n)
 	{
 		n = sz2;
